@@ -1,14 +1,14 @@
-## AWESOM-O-4000-Chatbot
+# AWESOM-O-4000-Chatbot
 
 This repository contains code for a chatbot that uses lines from South Park's Cartman
 
-# Data
+## Data
 
 For my data, I took a look at South Park dialogue across seasons 1 through 18
 Cartman's lines consist of 14% of the script, making him the character with the most lines
 I got the data from Kaggle at the following link: https://www.kaggle.com/tovarischsukhov/southparklines
 
-# Methodology
+## Methodology
 
 I first created a dictionary with Cartman's lines as values and the lines previous as the index
 Then, I created a corpus of the previous lines and turned it into a list of sentence tokens, 
