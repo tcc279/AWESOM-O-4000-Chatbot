@@ -16,5 +16,5 @@ which I then lemmatized and used TF IDF to create a sparse matrix of the lines.
 For each user input the chatbot finds the previous line with the most cosine similiarty
 and outputs the corresponding Cartman line using the dictionary.
 User inputs that have a low cosine similairty cause the chatbot to output that it doesnt understand.
-To visualize the results, i created a Flask app so users can actually talk to the chatbot.
+To visualize the results, I created a Flask app so users can actually talk to the chatbot.
 A video of the Flask application can be found in this repository as well, enjoy!
