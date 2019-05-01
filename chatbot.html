@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AWESOM-O 4000 Chatbot </title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+  </head>
+  <body style="background:url(https://i.imgur.com/v7cOCGT.jpg) ;background-repeat:no-repeat;background-size: 100% 100%;height:1000px;background-attachment:fixed">﻿
+
+    <div>
+      
+      <p id='chat' style = 'white-space: pre-line'>Greetings. I am the AWESOM-O 4000. AWESOM-O is here to answer your questions. Type "shut down" to end conversation</p>
+      
+      <input id = "demo" type="text" name="input" onkeyup="if (event.keyCode == 13) 
+      { getnextframe(); }" autocomplete="off">
+
+      <button type="button" onClick="getnextframe()">Chat!</button>
+      
+
+    </div>
+
+    <img src="https://vignette.wikia.nocookie.net/southpark/images/6/6d/Awesomo-0.png/revision/latest?cb=20170601014435" alt="Awesomo">
+
+    <script>
+
+     function getnextframe(){
+      document.getElementById("chat").textContent += "\r\n\r\n" + "USER: " + document.getElementById("demo").value
+       $.ajax({
+         type: "POST",
+         contentType: "application/json; charset=utf-8",
+         url: "/gof",
+         dataType: "json",
+         async: true,
+         data: "{\"text\": \""+ document.getElementById("demo").value  +"\"}",
+         success: function (d) {
+                      console.log(d);
+                      document.getElementById("demo").value = ''
+                      document.getElementById("chat").textContent += "\r\n\r\n" + d['text'];
+                      }
+            
+         
+       })
+     }
+
+    </script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
